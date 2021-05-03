@@ -2,12 +2,19 @@ START;
 XX-XX YS;
 XX-XX Z;
 X-XX X175B;
+xx-xx ab;
+xxx a234l;
 
 MAIN;
 PRINT "Please enter a number? ";
 INPUT YS;
-Z EQUALS-TO 15.00;
+
+Z EQUALS-TO-VALUE 15.00;
 ADD YS TO Z;
 PRINT "Result is ", Z;
+add z to ab;
+z equals-to ab;
+ab equals-to-value 25.05;
+a234l equals-to-value 500;
 
 END;

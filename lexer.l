@@ -1,5 +1,4 @@
 %{
-
 	#include <stdlib.h>
 	#include <ctype.h>
 	#include <string.h>
@@ -19,7 +18,7 @@ capacity 	([Xx]+)|([Xx]+\-[Xx]+)
 
 
 %%
-{whitespace}+                                     /* whitespace */ ;
+{whitespace}+                                     /* whitespace ignored */ ;
 
 (?i:START)                                      {return START; }    
 (?i:MAIN)                                       { return MAIN; }
@@ -31,15 +30,14 @@ capacity 	([Xx]+)|([Xx]+\-[Xx]+)
 (?i:INPUT)                                      { return INPUT; }
 (?i:PRINT)                                      { return PRINT; }
 
+{capacity}                                      { yylval.id = yytext; return CAPACITY; }
+{id}                                            { yylval.id = yytext; return IDENTIFIER; }
 
-{capacity}                                      {yylval.id = yytext; return CAPACITY; }
-{id}                                            {yylval.id = yytext; return IDENTIFIER; }
+{integer}+                                      { yylval.id = yytext; return INTEGER; }
+{integer}+\.{integer}+                          { yylval.id = yytext; return DOUBLE; }
 
-{integer}                                      { yylval.id = yytext; return INTEGER;}
-{integer}+\.{integer}+                          {yylval.id = yytext; return DOUBLE; }
-
-\"(\\.|[^\"])*\"                              	{ yylval.id = yytext; return STRINGLITERAL;}
+\"(\\.|[^\"])*\"                              	{ yylval.id = yytext; return STRINGLITERAL; }
 ;                                               { return SEMICOLON; }
-","                                             {return COMMA;}
-\.                                              {return TERMINATOR;}
+","                                             { return COMMA; }
+\.                                              { return TERMINATOR; }
 %%

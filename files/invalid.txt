@@ -1,12 +1,25 @@
 START;
+XXx abc33;
 XXX XY1Y;
+x xxxxxx;
 XXXX Y;
+xxx TOOLONGID;
 XXXX Z;
+xx-xx xxxxxx;
+xx abc;
+dd1h;
+xxxx-x bb;
+xx-xxx;
+
 
 MAIN;
 PRINT "Please enter a number? ";
 INPUT Y;
 Z EQUALS-TO Y;
 PRINT XY, " + ", Y, "=", Z;
+abc EQUALS-TO Y;
+abc EQUALS-TO-VALUE 150;
+XY1Y EQUALS-TO-VALUE 120.3;
+
 
 END-NOW;
