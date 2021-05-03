@@ -14,7 +14,7 @@ Extract the zipped project folder. On a linux system, navigate to the extracted 
 ```
 This will build the parser file which is used to parse the language instances. Once this file, `Parser` has been generated, it can be used to test the input text against the grammar. There are two potential use cases for this file
 
-### Line Input
+### User Input
 To test the parser using user input text directly from the terminal, execute the following command:
 
 ```bash
