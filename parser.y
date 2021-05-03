@@ -153,7 +153,7 @@ void checkIdAssignment(char *var1, char *var2) {
     
     if (ch1 != NULL && ch2 != NULL) {
         if (compareString(ch1, ch2) != 0) {
-            printf("[WARN line %d]: Identifiers %s with size(%s) & %s with size (%s) have different sizes.\n", yylineno, var1, ch1, var2, ch2);
+            printf("[WARN line %d]: Identifiers %s with size (%s) & %s with size (%s) have different sizes.\n", yylineno, var1, ch1, var2, ch2);
         }
     }
 }
