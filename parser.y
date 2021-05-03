@@ -29,14 +29,13 @@
     int identifier_counter = 0;
 
 %}
-%union { char *id; int intVal;}
+%union { char *id; }
 %start start
 %token<id> IDENTIFIER
 %token<id> CAPACITY
-%token<id> STRINGLITERAL
 %token<id> DOUBLE
 %token<id> INTEGER
-%token START MAIN END ADD TO PRINT INPUT EQUALSTO EQUALSTOVALUE SEMICOLON COMMA TERMINATOR INVALID
+%token START MAIN END ADD TO PRINT INPUT EQUALSTO STRINGLITERAL EQUALSTOVALUE SEMICOLON COMMA TERMINATOR INVALID
 
 %%
 start:              START SEMICOLON declarations {}

@@ -32,11 +32,10 @@ capacity 	([Xx]+)|([Xx]+\-[Xx]+)
 
 {capacity}                                      { yylval.id = yytext; return CAPACITY; }
 {id}                                            { yylval.id = yytext; return IDENTIFIER; }
-
 {integer}+                                      { yylval.id = yytext; return INTEGER; }
 {integer}+\.{integer}+                          { yylval.id = yytext; return DOUBLE; }
 
-\"(\\.|[^\"])*\"                              	{ yylval.id = yytext; return STRINGLITERAL; }
+\"(\\.|[^\"])*\"                              	{ return STRINGLITERAL; }
 ;                                               { return SEMICOLON; }
 ","                                             { return COMMA; }
 \.                                              { return TERMINATOR; }
