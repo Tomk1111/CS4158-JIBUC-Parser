@@ -1,0 +1,13 @@
+START;
+XX-XX YS;
+XX-XX Z;
+X-XX X175B;
+
+MAIN;
+PRINT "Please enter a number? ";
+INPUT YS;
+Z EQUALS-TO 15.00;
+ADD YS TO Z;
+PRINT "Result is ", Z;
+
+END;

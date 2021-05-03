@@ -1,0 +1,12 @@
+START;
+XXX XY1Y;
+XXXX Y;
+XXXX Z;
+
+MAIN;
+PRINT "Please enter a number? ";
+INPUT Y;
+Z EQUALS-TO Y;
+PRINT XY, " + ", Y, "=", Z;
+
+END-NOW;
