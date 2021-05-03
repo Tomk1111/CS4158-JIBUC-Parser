@@ -132,7 +132,6 @@ int compareString(char *first, char *second)
    {
       if ( *first == '\0' || *second == '\0' )
          break;
- 
       first++;
       second++;
    }
@@ -146,10 +145,8 @@ int compareString(char *first, char *second)
 void checkIdAssignment(char *var1, char *var2) {
     checkVar(var1);
     checkVar(var2);
-
     char *ch1 = getVarSize(var1);
     char *ch2 = getVarSize(var2);
-    
     if (ch1 != NULL && ch2 != NULL) {
         if (compareString(ch1, ch2) != 0) {
             printf("[WARN line %d]: Identifiers %s with size (%s) & %s with size (%s) have different sizes.\n", yylineno, var1, ch1, var2, ch2);
@@ -175,7 +172,6 @@ void checkDoubleAssignment(char *var1, char *double_var) {
     char *ch = getVarSize(var1);
     if (ch != NULL) {    
         trimVar(double_var);
-
         if (strlen(ch) != strlen(double_var)){
             printf("[WARN line %d]: Identifier %s with size (%s) does not match double value %s.\n", yylineno, var1, ch, double_var);
         } else {
@@ -187,7 +183,6 @@ void checkDoubleAssignment(char *var1, char *double_var) {
                     valid = true;
                 }
             }
-
             if (!valid) {
                 printf("[WARN line %d]: Identifier %s with size (%s) does not match double value %s.\n", yylineno, var1, ch, double_var);
             } 
@@ -199,7 +194,6 @@ void checkVar(char *varName) {
     getFirstVar(varName);
     trimVar(varName);
     toUppercase(varName);
-
     bool found = varExists(varName);
     if (!found) {
         printf("[WARN line %d]: Identifier %s is not declared.\n", yylineno, varName);
@@ -214,15 +208,12 @@ void toUppercase(char *varName) {
 }
 
 void addVar(char *varName, char *sizeVar) {
-    
     trimVar(varName);
     toUppercase(varName);
     bool found = varExists(varName);
-
     if (found) {
         printf("[ERROR line %d]: Identifier %s is already initialised.\n", yylineno, varName);
     } else {
-        
         int name_len = strlen(varName);
         getFirstVar(sizeVar);
         toUppercase(sizeVar);
@@ -230,7 +221,6 @@ void addVar(char *varName, char *sizeVar) {
         strcpy(var_identifiers[identifier_counter], varName);
         strcpy(var_sizes[identifier_counter], sizeVar);
         identifier_counter++;
-
         getVarSize(varName);
     }
 }
